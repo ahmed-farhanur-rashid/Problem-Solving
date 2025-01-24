@@ -6,7 +6,9 @@ int main()
 {
     char str[1100];
 
-    gets(str);
+    fgets(str, sizeof(str), stdin);
+
+    str[strcspn(str, "\n")] = '\0';
 
     str[0] = toupper(str[0]);
 
