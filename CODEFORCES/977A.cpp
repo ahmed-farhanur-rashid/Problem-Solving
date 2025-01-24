@@ -1,20 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-    int num, N, i;
+    int num;
+    int k;
 
-    scanf("%d %d",&num, &N);
+    scanf("%d %d", &num, &k);
 
-    for(i=0; i<N; i++)
+    while(k--)
     {
-        if(num % 10 == 0)
-            num /= 10;
+        if(num%10 != 0)
+            --num;
         else
-            num -= 1;
+            num /= 10;
     }
 
-    printf("%d\n",num);
+    printf("%d\n", num);
 
     return 0;
 }
