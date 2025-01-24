@@ -6,14 +6,14 @@ int main()
 {
     char str[128];
 
-    int characters[128]={0};
+    int characters[26]={0};
     int count = 0;
 
-    gets(str);
+    fgets(str, sizeof(str), stdin);
 
     for(int i=0; str[i]!='\0'; i++)
     {
-        characters[str[i]]++;
+        characters[str[i] - 'a']++;
     }
 
     for(int i=0; i<128; i++)
