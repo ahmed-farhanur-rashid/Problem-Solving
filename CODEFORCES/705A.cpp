@@ -18,6 +18,5 @@ int main()
         else
             printf("that ");
     }
-
     return 0;
 }
