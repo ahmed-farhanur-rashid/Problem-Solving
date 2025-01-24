@@ -2,11 +2,11 @@
 
 int main()
 {
-    int num, n, i;
+    int n;
 
     scanf("%d",&n);
 
-    for(i=1; i<=n; i++)
+    for(int i=1; i <= n; i++)
     {
         if(i%2==1)
             printf("I hate ");
