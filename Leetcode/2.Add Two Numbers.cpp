@@ -1,14 +1,4 @@
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
-
+// Definition for singly-linked list.
 struct ListNode
 {
     int val;
@@ -18,6 +8,7 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// Solution
 class Solution
 {
 public:
@@ -38,25 +29,31 @@ public:
             carry = sum / 10;
             sum %= 10;
 
-            temp = new ListNode (sum);
+            temp = new ListNode(sum);
 
             // latest always points at latest added node
-            if (result == nullptr) {
+            if (result == nullptr)
+            {
                 result = temp;
-                result-> next = nullptr;
+                result->next = nullptr;
                 latest = result;
             }
-            else {
+            else
+            {
                 latest->next = temp;
                 latest = latest->next;
             }
 
-            if (l1 != nullptr) l1 = l1->next;
-            if (l2 != nullptr) l2 = l2->next;
+            if (l1 != nullptr)
+                l1 = l1->next;
+            if (l2 != nullptr)
+                l2 = l2->next;
         }
 
-        if (carry != 0) {
-            temp = new ListNode (carry);
+        // Wrapping up any remaining carry.
+        if (carry != 0)
+        {
+            temp = new ListNode(carry);
 
             latest->next = temp;
             latest = latest->next;
